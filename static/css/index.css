@@ -50,7 +50,7 @@ html, body{
   .cardone{
     /* background-color: aliceblue; */
     width: 20vw;
-    height: 60vh;
+    height: 70vh;
     /* text-align: center; */
   }
   .cardone h2{
@@ -86,7 +86,7 @@ transition: all 0.2s ease 0s;
 .one{
   display:flex ;
  width: 100%;
- height: 80vh;
+ height: 70vh;
 }
 .login{
   width: 50%;
@@ -134,15 +134,19 @@ transition: all 0.2s ease 0s;
 }
 .image{
   width: 40%;
+  height: 60vh;
+  /* background-color: #20bf6b; */
 }
 .image img{
   width: 100%;
+  height: 70vh;
 }
 .data{
   width: 60%;
   font-family: 'Exo 2', sans-serif;
   font-weight: 900;
   position: relative;
+  height: 70vh;
   
 }
 .tax{
