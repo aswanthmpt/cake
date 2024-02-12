@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid d-flex justify-content-center">
+
+    <div class="container one  my-5 ">
+        <div class="image ">
+           <img src="{{details.image.url}}" alt=""> 
+           
+        </div>
+        <div class="data  ps-5">
+            <h1 class="mb-5">{{details.name}}</h1>
+            <h4 class="text-danger">&#8377 {{details.price}}</h4>
+            <h6 class="tax mb-3">inclusive of all taxes</h6>
+            <h5><u>Desccription</u></h5>
+            <p>{{details.desc}}</p>
+            <h6>Available:{{details.available}}</h6>
+            <h6>weight:{{details.weight}}Kg</h6>
+
+            <div class="buttons d-flex justify-content-center ">
+                <a href="{% url 'app:cart' details.id %}"><button class="btn ms-1 me-2 "> Add to cart <i class="fa fa-shopping-cart" style="font-size:24px"></i>
+                </button></a>
+               <a href=""> <button class="btn ms-4"> Buy Now
+            </button></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

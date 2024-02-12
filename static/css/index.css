@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karantina&family=Stylish&display=swap');
 html, body{
   background: #ffffff;
   /* background-image: linear-gradient( 135deg, #CE9FFC 10%, #7367F0 100%); */
@@ -23,28 +26,43 @@ html, body{
     color: white;
     text-align: center;
   }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  a:hover{
+    color: black;
+  }
 
-  .carousel-item img{
+  .carou_sel img{
     /* width: 100%; */
-    height: 70vh;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+    height: 60vh;
     width: 90vw;
     border-radius: 50px;
   }
-  .carousel{
+  .carou_sel{
     width: 100%;
-    text-align: center;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
   }
   .cardone{
     /* background-color: aliceblue; */
     width: 20vw;
-    height: 70vh;
+    height: 60vh;
+    /* text-align: center; */
   }
   .cardone h2{
-    font-family: 'Fuzzy Bubbles', sans-serif;
-
+    /* font-family: 'Fuzzy Bubbles', sans-serif; */
+    text-shadow: 1px 1px 2px ;
+    font-size: 25px;
+    font-family: 'Stylish', serif;
+    
   }
   .cardone h4{
     font-family: 'Fuzzy Bubbles', sans-serif;
+    font-size: 20px;
 
   }
   .cardone img{
@@ -61,3 +79,130 @@ html, body{
     transform: scale(1.1);
 transition: all 0.2s ease 0s;
   }
+  .neon h2 {
+    margin: 1rem auto;
+    animation: neon 1s ease infinite;
+}
+.one{
+  display:flex ;
+ width: 100%;
+ height: 80vh;
+}
+.login{
+  width: 50%;
+  /* background-color: #20bf6b; */
+  text-align: center;
+  border: 1px solid black;
+  
+}
+
+ 
+
+
+/* CSS */
+.button-88 {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgba(20,167,62,1) 0%, rgba(102,247,113,1) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  cursor: pointer;
+  
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-88:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+}
+
+.button-88:active {
+  box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+}
+
+.login a{
+  color: rgb(0, 21, 255);
+}
+.image{
+  width: 40%;
+}
+.image img{
+  width: 100%;
+}
+.data{
+  width: 60%;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 900;
+  position: relative;
+  
+}
+.tax{
+  font-size: 12px;
+  color: #898788;
+}
+.data h1{
+  font-family: 'Stylish', serif;
+}
+.buttons{
+  width: 100%;
+  position: absolute;
+  bottom: 10%;
+  left: 0%;
+}
+.btn {
+  width: 100%;
+  position: relative;
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1em 2.5em;
+  display: inline-block;
+  border-radius: 6em;
+  transition: all .2s;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  color: black;
+  background-color: rgb(218, 216, 216);
+ }
+ 
+ .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+ }
+ 
+ .btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+ }
+ 
+ .btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+ }
+ 
+ .btn::after {
+  background-color: #fff;
+ }
+ 
+ .btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+ }
