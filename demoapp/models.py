@@ -5,6 +5,7 @@ class Category(models.Model):
     name=models.CharField(max_length=250,unique=True)
     slug=models.SlugField(max_length=250,unique=True)
     image=models.ImageField(upload_to='categories',blank=True)
+    banner=models.ImageField(upload_to='categories',blank=True)
     desc=models.TextField(blank=True)
     
     class Meta:

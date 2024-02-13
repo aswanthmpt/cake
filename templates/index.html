@@ -4,6 +4,12 @@
 {% if cat %}
 <div class="container-fluid text-center neon">
 <h2>{{cat.name}}</h2>
+<div class="container carou_sel   py-3" style=" ">
+
+  <img src="{{cat.banner.url}}" class=" " alt="...">
+
+</div>
+
 </div>
 {% else %}
 <div class="container carou_sel   py-3" style=" ">

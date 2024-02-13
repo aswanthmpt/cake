@@ -1,26 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container-fluid d-flex justify-content-center">
+<div class="container-fluid d-flex justify-content-center" style="width: 100%;">
 
     <div class="container one  my-5 ">
-        <div class="image bg-warning">
+        <div class="image ">
            <img src="{{details.image.url}}" alt=""> 
-           <h6 class="text-danger" style="font-size: 15px;">NOTE: Design and icing of cake may vary from the image shown here since each chef has his/her own way of baking and designing a cake.</h6>
+           <h6 class="text-danger" style="font-size: 12px;">NOTE: Design and icing of cake may vary from the image shown here since each chef has his/her own way of baking and designing a cake.</h6>
            
         </div>
         <div class="data  ms-5 ">
-            <h1 class="mb-5">{{details.name}}</h1>
+            <h1 class="">{{details.name}}</h1>
+            <h4 class="mb-3" style="font-size: 15px;"><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span> ratings</h4>
             <h4 class="text-danger">&#8377 {{details.price}}</h4>
             <h6 class="tax mb-3">inclusive of all taxes</h6>
             <h5><u>Desccription</u></h5>
-            <p>{{details.desc}}</p>
+            <p style="font-weight: 200 ; color:rgb(163, 163, 163)">{{details.desc}}</p>
             <h6>Available:{{details.available}}</h6>
             <h6>weight:{{details.weight}}Kg</h6>
 
-            <div class="buttons d-flex justify-content-center ">
-                <a href="{% url 'app:cart' details.id %}"><button class="btn ms-1 me-2 "> Add to cart <i class="fa fa-shopping-cart" style="font-size:24px"></i>
+            <div class="buttons d-flex justify-content-center mt-1 ">
+                <a href="{% url 'app:cart' details.id %}"><button style="background-color: rgb(196, 194, 194);" class="btn ms-1 me-2  " > Add to cart <i class="fa fa-shopping-cart" style="font-size:24px"></i>
                 </button></a>
-               <a href=""> <button class="btn ms-4"> Buy Now
+               <a href=""> <button class="btn  ms-4" style="background-color: rgb(194, 193, 193);"> Buy Now
             </button></a>
             </div>
         </div>
