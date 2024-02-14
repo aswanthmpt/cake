@@ -167,7 +167,7 @@ transition: all 0.2s ease 0s;
   left: 0%;
   /* background-color: #20bf6b; */
 }
-.btn {
+.btns {
   width: 100%;
   position: relative;
   font-size: 17px;
@@ -183,9 +183,12 @@ transition: all 0.2s ease 0s;
   color: black;
   background-color: rgb(252, 11, 11);
  }
- .btn:hover{
+ .btns:hover{
   background-color: #ffffff;
  }
+.paginator{
+  align-items: center;
+}
 
  
  

@@ -4,6 +4,7 @@ from . models import Product,Category
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib import auth
+from django.core.paginator import Paginator,EmptyPage,InvalidPage
 # Create your views here.
 def home(req,c_slug=None):
     product=None
@@ -13,7 +14,19 @@ def home(req,c_slug=None):
         product=Product.objects.all().filter(category=c_page,available=True)
     else:
         product=Product.objects.all().filter(available=True)
-    return render(req,'index.html',{"product":product,"cat":c_page})
+        
+    paginator=Paginator(product,2)
+    try:
+        page=int(req.GET.get('page'))
+    except:
+        page=1
+    try:
+        products=paginator.page(page)
+    except(EmptyPage,InvalidPage):
+        products=paginator.page(paginator.num_pages)
+        
+    
+    return render(req,'index.html',{"product":products,"cat":c_page})
 def signin(req):
     if req.method=='POST':
         name=req.POST.get('name','')
@@ -54,5 +67,3 @@ def logout(req):
 def details(req,id):
     details=Product.objects.get(id=id)
     return render(req,'details.html',{"details":details})
-def cart(req,id):
-    return render(req,'cart.html')
