@@ -50,11 +50,13 @@ def signin(req):
     return render(req,'signin.html')
 def login(req):
     if req.method=='POST':
+        
         username=req.POST.get('username','')
         password=req.POST.get('password','')
         user=auth.authenticate(username=username,password=password)
         if user is not None:
             auth.login(req,user)
+            req.session['user']=str(user)
             return redirect('app:home')
         else:
             messages.info(req,"inavalid details")
@@ -62,6 +64,7 @@ def login(req):
     return render(req,'login.html')
 def logout(req):
     auth.logout(req)
+    req.session.flush()
     return redirect('app:home')
 
 def details(req,id):

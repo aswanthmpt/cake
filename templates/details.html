@@ -19,10 +19,21 @@
             <h6>weight:{{details.weight}}Kg</h6>
 
             <div class="buttons d-flex justify-content-center mt-1 ">
-                <a href="{% url 'cart:cart' details.id %}"><button style="background-color: rgb(196, 194, 194);" class="btns ms-1 me-2  " > Add to cart <i class="fa fa-shopping-cart" style="font-size:24px"></i>
-                </button></a>
-               <a href=""> <button class="btns  ms-4" style="background-color: rgb(194, 193, 193);"> Buy Now
-            </button></a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'cart:addcart' details.id %}">
+                    <button type="button" class="shadow btn btn-light text-dark me-5">Add to cart<i class="fa fa-shopping-cart" style="font-size:24px"></i></button>
+                    </a>
+               <a href="">
+                <button type="button" class="shadow btn ms-2 btn-light">Buy Now</button>
+                </a>
+                {% else %}
+                <a href="{% url 'app:login' %}">
+                    <button type="button" class="shadow btn btn-light text-dark me-5">Add to cart<i class="fa fa-shopping-cart" style="font-size:24px"></i></button>
+                    </a>
+               <a href="">
+                <button type="button" class="shadow btn btn-light ms-2">Buy Now</button>
+                </a>
+                {% endif %}
             </div>
         </div>
     </div>

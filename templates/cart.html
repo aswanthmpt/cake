@@ -1,4 +1,49 @@
 {% extends 'base.html' %}
 {% block content %}
+<div class="container-fluid cart  p-0 ">
+    <div class="left p-5">
+        <div class="container cartdetails p-3 ">
+            {% for i in cart %}
+         <div class="cartbox mt-2  d-flex">
+            <div class="cartimage  p-2">
+                <a href="{% url 'app:details' i.products.id %}"><img src="{{i.products.image.url}}" alt=""> </a>
+                
+            </div>
+            <div class="carttext ms-3">
+                <h1 class="" style="font-size: 20px;">{{ i.products.name }}</h1>
+                <h4 class="mb-3" style="font-size: 10px;"><span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span> <span class="fa fa-star checked">
 
+                </span><span class="fa fa-star checked"></span> ratings</h4>
+                <h3 style="font-size: 15px;">{{ i.price }}</h3>
+                <h3 style="font-size: 15px;">Quantity:{{ i.quantity}}</h3>
+                <a href="{% url 'cart:delete' i.products.id %}"><button type="button" class=" shadow-sm btn btn-danger me-auto ">Remove</button></a>
+            </div>
+            
+        </div>
+        {% endfor %}
+        </div>
+        <div class="container cartdetails p-3 mt-3">
+            <button type="button" class=" shadow-sm btn btn-warning me-auto ">PlaceOrder</button>
+        </div>
+
+    </div>
+    <div class="right p-5 ">
+        <div class="container cartdetails p-3 ">
+            <h1 style="font-size: 20px;">Price details</h1>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row"></th>
+                        
+                        <td>total price</td>
+                        <td>{{cart.price}}</td>
+                      </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
 {% endblock %}
