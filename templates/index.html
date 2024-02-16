@@ -26,7 +26,7 @@
 <div class="container-fluid d-flex flex-wrap justify-content-center">
   {% for i in product %}
   <a href="{% url 'app:details' i.id %}">
-  <div class="w3-card-4 cardone mx-2 mt-2  p-2  ">
+  <div class=" cardone mx-2 mt-2  p-2  ">
     <img src="{{i.image.url}}" alt="Alps">
     <div class="w3-container w3-center ms-2 mt-4">
       <h2>{{i.name}} </h2>

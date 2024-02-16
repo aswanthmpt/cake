@@ -4,7 +4,7 @@
     <div class="left p-5">
         <div class="container cartdetails p-3 ">
             {% for i in cart %}
-         <div class="cartbox mt-2  d-flex">
+         <div style="box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;" class="cartbox mt-2  d-flex">
             <div class="cartimage  p-2">
                 <a href="{% url 'app:details' i.products.id %}"><img src="{{i.products.image.url}}" alt=""> </a>
                 
@@ -15,9 +15,15 @@
                     <span class="fa fa-star checked"></span> <span class="fa fa-star checked">
 
                 </span><span class="fa fa-star checked"></span> ratings</h4>
-                <h3 style="font-size: 15px;">{{ i.price }}</h3>
-                <h3 style="font-size: 15px;">Quantity:{{ i.quantity}}</h3>
-                <a href="{% url 'cart:delete' i.products.id %}"><button type="button" class=" shadow-sm btn btn-danger me-auto ">Remove</button></a>
+                <h3 style="font-size: 15px;"> &#x20B9 {{ i.products.price }}</h3>
+                <h3 style="font-size: 15px;">currentprice: &#x20B9 {{ i.price }}</h3>
+                <div class="d-flex my-3 ">
+                    <a href="{% url 'cart:addcart' i.products.id %}"><button style="" class="w3-button p-1 m-2 w3-white">+</button></a>
+                <h3 class="p-1" style="font-size: 15px;border:1px black solid ; ">{{ i.quantity}}</h3>
+                <button class="w3-button p-1 m-2  w3-white">-</button>
+                </div>
+                
+                <a href="{% url 'cart:delete' i.products.id %}"><button type="button" class=" my-2 shadow-sm btn btn-danger me-auto ">Remove</button></a>
             </div>
             
         </div>
@@ -37,7 +43,7 @@
                         <th scope="row"></th>
                         
                         <td>total price</td>
-                        <td>{{cart.price}}</td>
+                        <td> &#x20B9 {{totalprice}}</td>
                       </tr>
                 </tbody>
             </table>

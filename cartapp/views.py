@@ -22,13 +22,14 @@ def addcart(req,id):
 
 def displaycart(req):
     user=req.session['user']
-    totalprice=0
+    
     
     
     cart=Cart.objects.all().filter(user=user)
+    totalprice=sum(item.price for item in cart)
     
     
-    return render(req,'cart.html',{"cart":cart})
+    return render(req,'cart.html',{"cart":cart,"totalprice":totalprice})
 def delete(req,id):
     user=req.session['user']
     product=Product.objects.get(id=id)
